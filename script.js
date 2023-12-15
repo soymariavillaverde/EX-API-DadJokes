@@ -1,35 +1,20 @@
-const jokeEl = document.('')
-const jokeBtn = document.('')
+const jokeEl = document.getElementById('joke')
+const jokeBtn = document.getElementById('jokeBtn')
 
-jokeBtn.addEventListener('', generateJoke)
+jokeBtn.addEventListener('click', generateJoke)
 
-// USING ASYNC/AWAIT
 async function generateJoke() {
   const config = {
     headers: {
-      Accept: '',
+      Accept: 'application/json',
     },
   }
 
-  const res = await ('', config)
-
-  const data = await res.json()
-
+  const endPoint = "https://icanhazdadjoke.com";
+  let response = await fetch(endPoint , config);
+  let data = await response.json();
   jokeEl.innerHTML = data.joke
+
 }
 
-//   HINTS
-// USING .then()
-// function generateJoke() {
-//   const config = {
-//     headers: {
-//       Accept: 'application/json',
-//     },
-//   }
-
-//   >>fetch('https://icanhazdadjoke.com', config)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       jokeEl.innerHTML = data.joke
-//     })
-// }
+generateJoke();
