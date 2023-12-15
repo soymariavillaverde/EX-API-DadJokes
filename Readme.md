@@ -1,5 +1,6 @@
 # Dad Jokes (en)
 Welcome to the API exercise, <i>Dad Jokes challenge</i>.
+You are at the reset branch, from here you can restart the exercise 
 
 ### Instructions
 To complete the challenge you must follow the following steps:
